@@ -1,5 +1,6 @@
 package com.euler.app;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
@@ -8,17 +9,15 @@ import java.util.stream.IntStream;
  */
 public class Problem1 {
 
-
     public int getSumUsing(int input){
         return  getSumOfMultiplesUsing(input);
-
     }
 
     private int getSumOfMultiplesUsing(int input) {
-        return IntStream.range(0, input).filter(i -> checkIfMultipleOf3Or5(i)).sum();
+        return IntStream.range(0, input).filter(element -> checkIfMultipleOf(element, 3,5)).sum();
     }
 
-    private boolean checkIfMultipleOf3Or5(int i) {
-        return i%3==0 || i%5==0;
+    private boolean checkIfMultipleOf(int i, Integer... multiples) {
+        return Arrays.stream(multiples).anyMatch(element -> i%element == 0);
     }
 }
