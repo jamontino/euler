@@ -26,15 +26,11 @@ public class Problem4 {
     }
 
     private int getLargestPalindromeUsing(int limit) {
+        //can be improved further by reversing the iteration and get the first palindrome encountered (since that would naturally be the largest)
         return IntStream.rangeClosed(1, limit).reduce(0, (a,b) -> isPalindrome(b*limit) ? (b*limit) : a);
     }
 
     public boolean isPalindrome(int value) {
-        String valueAsString = String.valueOf(value);
-        int cutoff = valueAsString.length()/2;
-        String firstHalf = StringUtils.substring(valueAsString,0,cutoff);
-        String lastHalf = StringUtils.reverse(valueAsString).substring(0,cutoff);
-
-        return firstHalf.equals(lastHalf);
+        return String.valueOf(value).equals(StringUtils.reverse(String.valueOf(value)));
     }
 }
