@@ -1,7 +1,6 @@
-package com.euler.app.stepDefinition;
+package com.euler.app.stepArtifacts.steps;
 
 import com.euler.app.Problem1;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

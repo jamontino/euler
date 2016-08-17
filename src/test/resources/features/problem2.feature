@@ -22,5 +22,11 @@ Feature:
     Then sum of all even numbered sequence will be 4613732
 
   Scenario: Above using data tables
-    When the input value then the output should be as below
+    When the input value then the output should be as below:
+      | input   | output  |
+      | 10      | 10      |
+      | 40      | 44      |
+      | 4000000 | 4613732 |
+      | 1000    | 798     |
+
 

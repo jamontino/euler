@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         plugin = { "json:target/ProblemRunnerResults.json" },
         features = "src/test/resources/features/",
         tags = "@all",
-        glue = "com.euler.app.stepDefinition"
+        glue = "com.euler.app.stepArtifacts"
 )
 public class ProblemRunnerTest {
 }
