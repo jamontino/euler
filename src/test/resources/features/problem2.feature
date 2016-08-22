@@ -21,7 +21,7 @@ Feature:
     Given that we generate fib sequence up to 4000000 digits
     Then sum of all even numbered sequence will be 4613732
 
-  Scenario: Above using data tables
+  Scenario: Same as above but using data tables.
     When the input value then the output should be as below:
       | input   | output  |
       | 10      | 10      |
@@ -29,4 +29,14 @@ Feature:
       | 4000000 | 4613732 |
       | 1000    | 798     |
 
+  Scenario Outline: Same as above but using Scenario Outline.
+    Given that we generate fib sequence up to <input> digits
+    Then sum of all even numbered sequence will be <output>
+
+    Examples:
+      | input   | output  |
+      | 10      | 10      |
+      | 40      | 44      |
+      | 4000000 | 4613732 |
+      | 1000    | 798     |
 
