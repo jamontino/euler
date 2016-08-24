@@ -1,0 +1,14 @@
+--Starting Selenium Grid Server on a machine. Below command will set this machine to be your hub
+
+java -jar selenium-server-standalone-2.53.1.jar -role hub 19:05:12.718 INFO - Launching Selenium Grid hub
+
+--Registering a machine as a node to Selenium Grid
+-- below command starts up the server and registers 2 system properties: driver for firefox and chrome
+--paths below will need to be changed when executed on the machine...will need to figure out how to run this from relative path later
+
+java -jar selenium-server-standalone-2.53.1.jar -role node
+    -Dwebdriver.chrome.driver="C:\webautomation_resources\chromedriver\chromedriver.exe"
+    -Dwebdriver.gecko.driver="C:\webautomation_resources\firefoxdriver\geckodriver.exe"
+    -hub http://localhost:4444/grid/register 19:05:57.880 INFO - Launching a Selenium Grid node
+
+
